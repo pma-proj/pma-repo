@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE function [dbo].[fcn_GetProjectsByName](@Name varchar(50))
+CREATE function [dbo].[fcn_GetProjects]()
 returns table
 as
 return(
@@ -20,7 +20,6 @@ return(
 	MEMBER_LAST_NAME as 'OwnerLastName'
 	FROM PROJECT P
 	INNER JOIN MEMBER M ON M.MEMBER_ID = P.PROJECT_OWNER_ID
-	WHERE PROJECT_NAME = @Name
 );
 GO
 

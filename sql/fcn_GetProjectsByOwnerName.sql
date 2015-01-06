@@ -1,7 +1,6 @@
 USE [PMA_TEST]
 GO
 
-/****** Object:  UserDefinedFunction [dbo].[fcn_GetProjectsByOwnerName]    Script Date: 01/02/2015 17:16:52 ******/
 SET ANSI_NULLS ON
 GO
 
