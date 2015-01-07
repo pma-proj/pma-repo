@@ -17,10 +17,13 @@ namespace PMAWeb.Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            dataReturn = Mapper.Map<PMAServices.DTO.ProjectDataReturn, DTO.ProjectDataReturn>(projectServices.GetProject("Ar", "Leb"));
+            dataReturn = Mapper.Map<PMAServices.DTO.ProjectDataReturn, DTO.ProjectDataReturn>(projectServices.GetProjects());
 
-            List<ProjectDataReturn> list = new List<ProjectDataReturn>();
-            list.Add(dataReturn);
+            List<ProjectModel> list;
+            if (dataReturn.model.Count > 0)
+                list = dataReturn.model;
+            else
+                list = new List<ProjectModel>();
 
             Repeater1.DataSource = list;
             Repeater1.DataBind();
@@ -28,7 +31,7 @@ namespace PMAWeb.Pages
 
         private void LoadProjects()
         {
-            string ownerFirstName = "Jason";
+            
         }
     }
 }

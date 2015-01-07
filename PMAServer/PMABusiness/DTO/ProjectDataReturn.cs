@@ -9,6 +9,6 @@ namespace PMABusiness.DTO
 {
     public class ProjectDataReturn
     {
-        public ProjectModel model { get; set; }
+        public List<ProjectModel> model { get; set; }
     }
 }

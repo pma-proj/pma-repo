@@ -18,8 +18,6 @@ namespace PMAWeb
         protected void Application_Start(object sender, EventArgs e)
         {
             DtoToDomainMappingsConfigurator.MapObjects();
-            ProjectServices project = new ProjectServices();
-            PMAServices.DTO.ProjectDataReturn proj = project.GetProject("Project 1");
         }
 
         protected void Session_Start(object sender, EventArgs e)

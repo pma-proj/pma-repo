@@ -17,14 +17,19 @@ namespace PMABusiness
             _projectDb = new ProjectRepository();
         }
 
-        public ProjectDataReturn GetProject(string name)
+        public ProjectDataReturn GetProjects()
         {
-            return new ProjectDataReturn { model = _projectDb.GetProjects(name) };
+            return new ProjectDataReturn { model = _projectDb.GetProjects() };
         }
 
-        public ProjectDataReturn GetProject(string firstName, string lastName)
+        public ProjectDataReturn GetProjects(string projectName)
         {
-            return new ProjectDataReturn { model = _projectDb.GetProject(firstName, lastName) };
+            return new ProjectDataReturn { model = _projectDb.GetProjects(projectName) };
+        }
+
+        public ProjectDataReturn GetProjects(string firstName, string lastName)
+        {
+            return new ProjectDataReturn { model = _projectDb.GetProjects(firstName, lastName) };
         }
     }
 }

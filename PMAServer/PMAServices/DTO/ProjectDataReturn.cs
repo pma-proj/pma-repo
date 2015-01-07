@@ -10,6 +10,6 @@ namespace PMAServices.DTO
     public class ProjectDataReturn
     {
         [DataMember]
-        public ProjectModel model { get; set; }
+        public List<ProjectModel> model { get; set; }
     }
 }

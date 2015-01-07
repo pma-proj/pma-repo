@@ -1,24 +1,22 @@
 USE [PMA_TEST]
 GO
 
-SET ANSI_NULLS ON
+IF EXISTS (SELECT 1 FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[fcn_GetProjectsByOwnerName]') AND xtype IN (N'FN', N'IF', N'TF'))
+	DROP FUNCTION [dbo].[fcn_GetProjectsByOwnerName]
 GO
-
-SET QUOTED_IDENTIFIER ON
-GO
-
 
 CREATE function [dbo].[fcn_GetProjectsByOwnerName](@FirstName varchar(30), @LastName varchar(40))
-returns table
-as
-return(
-	select PROJECT_ID as 'Id',
-	PROJECT_NAME as 'Name',
-	PROJECT_START_DATE as 'StartDate',
-	PROJECT_END_DATE as 'EndDate',
-	P.PROJECT_OWNER_ID as 'OwnerId',
-	MEMBER_FIRST_NAME as 'OwnerFirstName',
-	MEMBER_LAST_NAME as 'OwnerLastName'
+RETURNS TABLE
+AS
+RETURN 
+(
+	SELECT PROJECT_ID 	AS 'Id',
+	PROJECT_NAME 		AS 'Name',
+	PROJECT_START_DATE 	AS 'StartDate',
+	PROJECT_END_DATE 	AS 'EndDate',
+	P.PROJECT_OWNER_ID 	AS 'OwnerId',
+	MEMBER_FIRST_NAME 	AS 'OwnerFirstName',
+	MEMBER_LAST_NAME 	AS 'OwnerLastName'
 	FROM PROJECT P
 	INNER JOIN MEMBER M ON M.MEMBER_ID = P.PROJECT_OWNER_ID
 	WHERE MEMBER_FIRST_NAME LIKE '%' + @FirstName + '%'
@@ -26,4 +24,3 @@ return(
 );
 
 GO
-

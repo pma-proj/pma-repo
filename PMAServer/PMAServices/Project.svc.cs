@@ -14,18 +14,24 @@ namespace PMAServices
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class ProjectServices : IProjectServices
     {
-        public ProjectDataReturn GetProject(string name)
+        ProjectTasks projectTasks = new ProjectTasks(); 
+        public ProjectDataReturn GetProjects()
         {
-            var projectTasks = new ProjectTasks();
-            var result = projectTasks.GetProject(name);
+            var result = projectTasks.GetProjects();
 
             return AutoMapper.Mapper.Map<PMABusiness.DTO.ProjectDataReturn, ProjectDataReturn>(result);
         }
 
-        public ProjectDataReturn GetProject(string firstName, string lastName)
+        public ProjectDataReturn GetProjects(string name)
         {
-            var projectTasks = new ProjectTasks();
-            var result = projectTasks.GetProject(firstName, lastName);
+            var result = projectTasks.GetProjects(name);
+
+            return AutoMapper.Mapper.Map<PMABusiness.DTO.ProjectDataReturn, ProjectDataReturn>(result);
+        }
+
+        public ProjectDataReturn GetProjects(string firstName, string lastName)
+        {
+            var result = projectTasks.GetProjects(firstName, lastName);
 
             return AutoMapper.Mapper.Map<PMABusiness.DTO.ProjectDataReturn, ProjectDataReturn>(result);
         }

@@ -14,11 +14,11 @@ namespace PMAServices
     {
         [OperationContract]
         [DataContractFormat(Style= OperationFormatStyle.Rpc)]
-        ProjectDataReturn GetProject(string name);
+        ProjectDataReturn GetProjects(string name);
 
         [OperationContract]
         [DataContractFormat(Style = OperationFormatStyle.Rpc)]
-        ProjectDataReturn GetProject(string firstName, string lastName);
+        ProjectDataReturn GetProjects(string firstName, string lastName);
     }
 
 }

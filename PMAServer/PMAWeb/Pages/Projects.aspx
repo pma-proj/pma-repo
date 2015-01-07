@@ -31,19 +31,19 @@
                                 <tr>
                                     <td>
                                         <asp:Label runat="server" ID="ProjectName"
-                                            Text='<%# Eval("model.Name") %>' />
+                                            Text='<%# Eval("Name") %>' />
                                     </td>
                                     <td>
                                         <asp:Label runat="server" ID="StartDate"
-                                            Text='<%# Convert.ToDateTime(Eval("model.StartDate")).ToString("dd/MM/yyyy") %>' />
+                                            Text='<%# Convert.ToDateTime(Eval("StartDate")).ToString("dd/MM/yyyy") %>' />
                                     </td>
                                     <td>
                                         <asp:Label runat="server" ID="EndDate"
-                                            Text='<%# Convert.ToDateTime(Eval("model.EndDate")).ToString("dd/MM/yyyy")  %>' />
+                                            Text='<%# Convert.ToDateTime(Eval("EndDate")).ToString("dd/MM/yyyy")  %>' />
                                     </td>
                                     <td>
                                         <asp:Label runat="server" ID="OwnerName"
-                                            Text='<%# string.Concat(Eval("model.OwnerFirstName") + " " + Eval("model.OwnerLastName")) %>' />
+                                            Text='<%# string.Concat(Eval("OwnerFirstName") + " " + Eval("OwnerLastName")) %>' />
                                     </td>
                                 </tr>
                             </ItemTemplate>

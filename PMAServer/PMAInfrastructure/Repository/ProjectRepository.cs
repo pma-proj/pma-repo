@@ -16,7 +16,6 @@ namespace PMAInfrastructure.Repository
         {
             _projectDb = new ProjectDataDataContext();
 
-            var project = new ProjectModel();
             var results = _projectDb.fcn_GetProjects();
             int c = results.Count();
 
@@ -33,12 +32,11 @@ namespace PMAInfrastructure.Repository
 
         }
 
-        public ProjectModel GetProjects(string name)
+        public List<ProjectModel> GetProjects(string projectName)
         {
             _projectDb = new ProjectDataDataContext();
 
-            var project = new ProjectModel();
-            var results = _projectDb.fcn_GetProjectsByName(name);
+            var results = _projectDb.fcn_GetProjectsByName(projectName);
             int c = results.Count();
 
             return results.Select(i => new ProjectModel
@@ -50,14 +48,13 @@ namespace PMAInfrastructure.Repository
                 OwnerId = i.OwnerId,
                 OwnerFirstName = i.OwnerFirstName,
                 OwnerLastName = i.OwnerLastName
-            }).SingleOrDefault();
+            }).ToList();
         }
 
-        public ProjectModel GetProject(string firstName, string lastName)
+        public List<ProjectModel> GetProjects(string firstName, string lastName)
         {
             _projectDb = new ProjectDataDataContext();
 
-            var project = new ProjectModel();
             var results = _projectDb.fcn_GetProjectsByOwnerName(firstName, lastName);
             int c = results.Count();
 
@@ -70,7 +67,7 @@ namespace PMAInfrastructure.Repository
                 OwnerId = i.OwnerId,
                 OwnerFirstName = i.OwnerFirstName,
                 OwnerLastName = i.OwnerLastName
-            }).SingleOrDefault();
+            }).ToList();
         }
     }
 }
