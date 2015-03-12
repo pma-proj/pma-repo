@@ -5,34 +5,10 @@
     <Setting Name="PMA_TESTConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=FR-L2259214\SQLEXPRESS;Initial Catalog=PMA_TEST;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TEST;Persist Security Info=True;User ID=pma-usr;Password=1fwaLtzj&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=FR-L2259214\SQLEXPRESS;Initial Catalog=PMA_TEST;Integrated Security=True</Value>
-    </Setting>
-    <Setting Name="PMA_TSTConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TST;Persist Security Info=True;User ID=pma-usr&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TST;Persist Security Info=True;User ID=pma-usr</Value>
-    </Setting>
-    <Setting Name="PMA_TSTConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TST;Persist Security Info=True;User ID=pma-usr;Password=1fwaLtzj&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TST;Persist Security Info=True;User ID=pma-usr;Password=1fwaLtzj</Value>
-    </Setting>
-    <Setting Name="PMA_TESTConnectionString1" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TEST;User ID=pma-usr;Password=1fwaLtzj&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TEST;User ID=pma-usr;Password=1fwaLtzj</Value>
+      <Value Profile="(Default)">Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TEST;Persist Security Info=True;User ID=pma-usr;Password=1fwaLtzj</Value>
     </Setting>
   </Settings>
 </SettingsFile>

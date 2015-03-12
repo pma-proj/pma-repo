@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssignmentTasks.cs" />
+    <Compile Include="DTO\AssignmentDataReturn.cs" />
     <Compile Include="DTO\ProjectDataReturn.cs" />
     <Compile Include="ProjectTasks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

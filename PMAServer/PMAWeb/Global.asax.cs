@@ -18,6 +18,9 @@ namespace PMAWeb
         protected void Application_Start(object sender, EventArgs e)
         {
             DtoToDomainMappingsConfigurator.MapObjects();
+
+            AssignmentTasks ass = new AssignmentTasks();
+            var test = ass.GetAssignments();
         }
 
         protected void Session_Start(object sender, EventArgs e)

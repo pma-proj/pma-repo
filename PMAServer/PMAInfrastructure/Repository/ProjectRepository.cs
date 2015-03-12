@@ -17,7 +17,6 @@ namespace PMAInfrastructure.Repository
             _projectDb = new ProjectDataDataContext();
 
             var results = _projectDb.fcn_GetProjects();
-            int c = results.Count();
 
             return results.Select(i => new ProjectModel
             {
@@ -29,7 +28,6 @@ namespace PMAInfrastructure.Repository
                 OwnerFirstName = i.OwnerFirstName,
                 OwnerLastName = i.OwnerLastName
             }).ToList();
-
         }
 
         public List<ProjectModel> GetProjects(string projectName)
@@ -37,7 +35,6 @@ namespace PMAInfrastructure.Repository
             _projectDb = new ProjectDataDataContext();
 
             var results = _projectDb.fcn_GetProjectsByName(projectName);
-            int c = results.Count();
 
             return results.Select(i => new ProjectModel
             {
@@ -56,17 +53,16 @@ namespace PMAInfrastructure.Repository
             _projectDb = new ProjectDataDataContext();
 
             var results = _projectDb.fcn_GetProjectsByOwnerName(firstName, lastName);
-            int c = results.Count();
 
-            return results.Select(i => new ProjectModel
+            return results.Select(p => new ProjectModel
             {
-                Id = i.Id,
-                Name = i.Name,
-                StartDate = i.StartDate,
-                EndDate = i.EndDate,
-                OwnerId = i.OwnerId,
-                OwnerFirstName = i.OwnerFirstName,
-                OwnerLastName = i.OwnerLastName
+                Id = p.Id,
+                Name = p.Name,
+                StartDate = p.StartDate,
+                EndDate = p.EndDate,
+                OwnerId = p.OwnerId,
+                OwnerFirstName = p.OwnerFirstName,
+                OwnerLastName = p.OwnerLastName
             }).ToList();
         }
     }
