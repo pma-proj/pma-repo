@@ -180,16 +180,16 @@
                             <!-- start: User Dropdown -->
                             <li class="dropdown">
                                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="halflings-icon white user"></i>Jason
+                                    <i class="halflings-icon white user"></i><asp:Label runat="server" ID="UserName" />
 							
                                 <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-menu-title">
-                                        <span>Account Settings</span>
+                                        <span>Préférences</span>
                                     </li>
-                                    <li><a href="#"><i class="halflings-icon user"></i>Profile</a></li>
-                                    <li><a href="login.html"><i class="halflings-icon off"></i>Logout</a></li>
+                                    <li><a href="#"><i class="halflings-icon user"></i>Profil</a></li>
+                                    <li><asp:LinkButton runat="server" ID="HLDisconnectTop" NavigateUrl="~/Pages/Login.aspx" OnClick="HLDisconnect_Click"><i class="halflings-icon off"></i>Déconnexion</asp:LinkButton></li>
                                 </ul>
                             </li>
                             <!-- end: User Dropdown -->
@@ -218,7 +218,7 @@
                         </li>--%>
                             <li><a href="Projects.aspx"><i class="icon-list-alt"></i><span class="hidden-tablet">Projets</span></a></li>
                             <li><a href="Mails.aspx"><i class="icon-inbox"></i><span class="hidden-tablet">Mails</span></a></li>
-                            <li><asp:LinkButton runat="server" ID="HLDisconnect" NavigateUrl="~/Pages/Login.aspx" OnClick="HLDisconnect_Click"><i class="icon-lock"></i><span class="hidden-tablet">Se Déconnecter</span></asp:LinkButton></li>
+                            <li><asp:LinkButton runat="server" ID="HLDisconnectLeft" NavigateUrl="~/Pages/Login.aspx" OnClick="HLDisconnect_Click"><i class="icon-lock"></i><span class="hidden-tablet">Se Déconnecter</span></asp:LinkButton></li>
                         </ul>
                     </div>
                 </div>

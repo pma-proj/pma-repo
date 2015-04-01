@@ -12,13 +12,20 @@ namespace PMAWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Context.User.Identity.IsAuthenticated)
+            {
+                UserName.Text = Context.User.Identity.Name;
+            }
+            else
+            {
+                FormsAuthentication.RedirectToLoginPage();
+            }
         }
 
         protected void HLDisconnect_Click(object sender, EventArgs e)
         {
-            if(Context.User.Identity.IsAuthenticated)
-            FormsAuthentication.SignOut();
+            if (Context.User.Identity.IsAuthenticated)
+                FormsAuthentication.SignOut();
 
             FormsAuthentication.RedirectToLoginPage();
         }
