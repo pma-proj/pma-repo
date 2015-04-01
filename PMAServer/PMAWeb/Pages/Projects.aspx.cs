@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using AutoMapper;
+using PMAServices.Services;
 
 namespace PMAWeb.Pages
 {
@@ -27,11 +28,6 @@ namespace PMAWeb.Pages
 
             Repeater1.DataSource = list;
             Repeater1.DataBind();
-        }
-
-        private void LoadProjects()
-        {
-            
         }
     }
 }

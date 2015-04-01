@@ -66,6 +66,7 @@
     <Content Include="Global.asax" />
     <Content Include="Pages\Disconnect.aspx" />
     <Content Include="Pages\Index.aspx" />
+    <Content Include="Pages\Login.aspx" />
     <Content Include="Pages\Mails.aspx" />
     <Content Include="Pages\Projects.aspx" />
     <Content Include="Resources\Images\arrows-active.png" />
@@ -191,9 +192,12 @@
     <Content Include="Resources\Styles\style.css" />
     <Content Include="Resources\Styles\uniform.default.css" />
     <Content Include="Resources\Styles\uploadify.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authentication\CustomRoleProvider.cs" />
     <Compile Include="DTO\ProjectDataReturn.cs" />
     <Compile Include="DTO\ProjectModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -213,6 +217,13 @@
     </Compile>
     <Compile Include="Pages\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Mails.aspx.cs">
       <DependentUpon>Mails.aspx</DependentUpon>
@@ -236,6 +247,7 @@
       <DependentUpon>PMAWeb.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Authentication\CustomMembershipProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -282,7 +294,9 @@
       <Name>PMAServices</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

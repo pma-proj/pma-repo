@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PMAWeb {
+namespace PMAWeb.Pages {
     
     
-    public partial class PMAWeb {
+    public partial class Login {
         
         /// <summary>
-        /// HLDisconnect control.
+        /// TxtLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton HLDisconnect;
+        protected global::System.Web.UI.WebControls.TextBox TxtLogin;
         
         /// <summary>
-        /// CurrentPageName control.
+        /// TxtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder CurrentPageName;
+        protected global::System.Web.UI.WebControls.TextBox TxtPassword;
         
         /// <summary>
-        /// PageContent control.
+        /// BtnConnect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder PageContent;
+        protected global::System.Web.UI.WebControls.Button BtnConnect;
     }
 }

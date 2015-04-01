@@ -7,9 +7,9 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
-namespace PMAServices
+namespace PMAServices.Services
 {
-    [ServiceContract(Namespace = "http://PMAServices")]
+    [ServiceContract(Namespace = "http://PMAServices/Services")]
     public interface IProjectServices
     {
         [OperationContract]
