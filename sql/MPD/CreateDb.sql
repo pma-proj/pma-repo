@@ -4,16 +4,64 @@ GO
 ---------------------------------------------------------------------
 -- TEMP: DROP TABLE FOR TESTS.
 ---------------------------------------------------------------------
+IF EXISTS (
+	SELECT 1 FROM sys.objects 
+	WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[TASK]') 
+	AND type in (N'U')
+)
 DROP TABLE TASK
 GO
 
+IF EXISTS (
+	SELECT 1 FROM sys.objects 
+	WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[ASSIGNMENT]') 
+	AND type in (N'U')
+)
 DROP TABLE ASSIGNMENT
 GO
 
+IF EXISTS (
+	SELECT 1 FROM sys.objects 
+	WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[PROJECT]') 
+	AND type in (N'U')
+)
 DROP TABLE PROJECT
 GO
 
+IF EXISTS (
+	SELECT 1 FROM sys.objects 
+	WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[MEMBER]') 
+	AND type in (N'U')
+)
 DROP TABLE MEMBER
+GO
+
+IF EXISTS (
+	SELECT 1 FROM sys.objects 
+	WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[ROLE]') 
+	AND type in (N'U')
+)
+DROP TABLE ROLE
+GO
+
+---------------------------------------------------------------------
+-- TABLE ROLE
+---------------------------------------------------------------------
+IF NOT EXISTS (
+	SELECT 1 FROM sys.objects 
+	WHERE OBJECT_ID = OBJECT_ID(N'[dbo].[ROLE]') 
+	AND type in (N'U')
+)
+BEGIN
+	CREATE TABLE ROLE
+	(
+		ROLE_ID		INT				NOT NULL IDENTITY(1,1),
+		ROLE_NAME	VARCHAR(30)		NOT NULL,
+	)
+	
+	ALTER TABLE ROLE
+	ADD CONSTRAINT	PK_RLE_ROLE_ID	PRIMARY KEY (ROLE_ID)
+END
 GO
 
 ---------------------------------------------------------------------
@@ -36,11 +84,17 @@ BEGIN
 		MEMBER_BIRTHDATE	DATETIME		NOT NULL,
 		MEMBER_TEL			VARCHAR(20)		NOT NULL,
 		MEMBER_MAIL_PRO		VARCHAR(80)		NOT NULL,
-		MEMBER_MAIL_PERSO	VARCHAR(80)		NOT NULL,
+		MEMBER_PASSWORD		VARCHAR(500)	NOT NULL,
+		ROLE_ID				INT
 	)
 	
 	ALTER TABLE MEMBER
 	ADD CONSTRAINT	PK_MBM_MEMBER_ID	PRIMARY KEY (MEMBER_ID)
+	
+	ALTER TABLE MEMBER
+		ADD CONSTRAINT	FK_MBM_ROLE_ID 
+		FOREIGN KEY (ROLE_ID)
+		REFERENCES ROLE(ROLE_ID)  ON DELETE SET NULL
 END
 GO
 

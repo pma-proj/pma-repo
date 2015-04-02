@@ -47,7 +47,19 @@ namespace PMAWeb.Authentication
 
         public override string[] GetRolesForUser(string username)
         {
-            throw new NotImplementedException();
+            System.Diagnostics.Trace.TraceInformation("[CustomRoleProvider] - GetRolesForUser");
+
+            if (username == "tresfieldj")
+            {
+                return new string[] { RolesManager.Admin.ToString(), RolesManager.ProjectManager.ToString() };
+            }
+
+            if (username == "user01")
+            {
+                return new string[] { RolesManager.TeamMember.ToString() };
+            }
+
+            return new string[] { RolesManager.Unknown.ToString() };
         }
 
         public override string[] GetUsersInRole(string roleName)

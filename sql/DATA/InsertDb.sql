@@ -2,6 +2,25 @@ USE [PMA_TEST]
 GO
 
 ---------------------------------------------------------------------
+-- TABLE ROLE
+---------------------------------------------------------------------
+INSERT INTO ROLE
+(			
+	ROLE_NAME
+)
+VALUES
+(
+	'Admin'
+),
+(
+	'Project Manager'
+),
+(
+	'Team Member'
+)
+GO
+
+---------------------------------------------------------------------
 -- TABLE MEMBER
 ---------------------------------------------------------------------
 INSERT INTO MEMBER
@@ -14,23 +33,14 @@ INSERT INTO MEMBER
 	MEMBER_BIRTHDATE,
 	MEMBER_TEL,		
 	MEMBER_MAIL_PRO,		
-	MEMBER_MAIL_PERSO
+	MEMBER_PASSWORD,
+	ROLE_ID
 )
 VALUES
 (
 	'Tresfield', 'Jason', '5 rue du 8 mai 1945', '69310',
 	'Pierre-Bénite', '1991-04-18', '0400000000', 'jason.tresfield@cgi.com',
-	'jason.tresfield@gmail.com'
-),
-(
-	'Lebon', 'Arnaud', '23 rue des Chartreux', '69004',
-	'Lyon', '1988-12-19', '0400000000', 'lebon.arnaud@outlook.com',
-	'arnaud.lebon@gmail.com'
-),
-(
-	'Scheppler', 'Alexandre', '', '69000',
-	'Lyon', '1975-01-01', '0400000000', 'alexandre.scheppler@cgi.com',
-	'alexandre.scheppler@gmail.com'
+	'AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA5xW35mQDlUy5WYqWwVOq9AAAAAACAAAAAAAQZgAAAAEAACAAAABolUlb5+tLl2cDBUDFRKP0zvzI944pZtpoZMLmaVoREwAAAAAOgAAAAAIAACAAAADGSejYRvXatfDtm/sTJ2XNdmfFa6dg35WT6Jck3B87dhAAAABi8/lbUJ2wZhcf3NESNp5GQAAAAFbRFpKpHZRfN4TQw8k4ZMhlZcPPgaNB7/3xmVB86F59vzX0MclXCVszVB0aeOHPVPswnTpF+YU7o0oqz4Qcvvs=', 1
 )
 GO
 
@@ -46,13 +56,7 @@ INSERT INTO PROJECT
 )
 VALUES
 (
-	'PMA', '2014-10-06', '2014-10-06', 1
-),
-(
-	'GED', '2014-09-17', '2016-09-09', 2
-),
-(
-	'CAROline', '2012-01-01', '2017-12-31', 3
+	'CAROline', '2014-10-06', '2014-10-06', 1
 )
 GO
 
@@ -69,10 +73,10 @@ INSERT INTO ASSIGNMENT
 )
 VALUES
 (
-	1, 3, 'APP46Ter', '20150304'
+	1, 1, 'APP46Ter', '20150304'
 ),
 (
-	1, 3, 'Refonte Fiche Produit', '20141101'
+	1, 1, 'Refonte Fiche Produit', '20141101'
 )
 GO
 

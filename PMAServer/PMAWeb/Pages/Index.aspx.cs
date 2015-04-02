@@ -14,7 +14,10 @@ namespace PMAWeb.Pages
         {
             if (!Context.User.Identity.IsAuthenticated)
             {
+                System.Diagnostics.Trace.TraceWarning("[Index.aspx] - Page_Load : L'utilisateur n'est pas authentifié; redirection vers la page de Login.");
+
                 FormsAuthentication.RedirectToLoginPage();
+                return;
             }
         }
     }

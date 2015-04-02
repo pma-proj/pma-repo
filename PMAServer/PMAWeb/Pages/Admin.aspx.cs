@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace PMAWeb.Pages
 {
-    public partial class Mails : System.Web.UI.Page
+    public partial class Admin : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -16,7 +16,7 @@ namespace PMAWeb.Pages
             {
                 if (!Context.User.Identity.IsAuthenticated)
                 {
-                    System.Diagnostics.Trace.TraceWarning("[Mails.aspx] - Page_Load : L'utilisateur n'est pas authentifié; redirection vers la page de Login.");
+                    System.Diagnostics.Trace.TraceWarning("[Admin.aspx] - Page_Load : L'utilisateur n'est pas authentifié; redirection vers la page de Login.");
 
                     FormsAuthentication.RedirectToLoginPage();
                     return;
@@ -26,6 +26,8 @@ namespace PMAWeb.Pages
                 if (!Context.User.IsInRole(RolesManager.Admin.ToString()))
                 {
                     Response.Redirect("Index.aspx");
+
+                    System.Diagnostics.Trace.TraceWarning("[Admin.aspx] - Page_Load : L'utilisateur n'est pas administrateur; redirection vers la page d'accueil.");
                 }
             }
         }

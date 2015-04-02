@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PMA_TEST" Class="AssignmentDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TEST;Persist Security Info=True;User ID=pma-usr" SettingsObjectName="PMAInfrastructure.Properties.Settings" SettingsPropertyName="PMA_TESTConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.fcn_GetAssignmentsByMember" Method="fcn_GetAssignmentsByMember" IsComposable="true">
+    <ElementType Name="fcn_GetAssignmentsByMemberResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MemberId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MemberFirstName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="MemberLastName" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
   <Function Name="dbo.fcn_GetAssignments" Method="fcn_GetAssignments" IsComposable="true">
     <ElementType Name="fcn_GetAssignmentsResult">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

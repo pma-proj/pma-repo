@@ -2,14 +2,13 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head runat="server">
     <!-- start: Meta -->
     <meta charset="utf-8" />
     <title>Project Management App</title>
     <meta name="description" content="Project Management App" />
     <meta name="author" content="Jason Tresfield" />
-    <meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina" />
     <!-- end: Meta -->
 
     <!-- start: Mobile Specific -->
@@ -23,7 +22,6 @@
     <link href="<%=ResolveUrl("~/Resources/Styles/style-responsive.css") %>" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext" rel="stylesheet" type="text/css" />
     <!-- end: CSS -->
-
 
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -155,7 +153,7 @@
                                     <li>
                                         <a href="#">
                                             <span class="avatar">
-                                                <img src="<%=ResolveUrl("~/Resources/Images/avatar.jpg") %>" alt="Avatar"></span>
+                                                <img src="<%=ResolveUrl("~/Resources/Images/avatar.jpg") %>" alt="Avatar" /></span>
                                             <span class="header">
                                                 <span class="from">Dennis Ji
                                                 </span>
@@ -180,16 +178,18 @@
                             <!-- start: User Dropdown -->
                             <li class="dropdown">
                                 <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                    <i class="halflings-icon white user"></i><asp:Label runat="server" ID="UserName" />
-							
-                                <span class="caret"></span>
+                                    <i class="halflings-icon white user"></i>
+                                    <asp:Label runat="server" ID="UserName" />
+
+                                    <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-menu-title">
                                         <span>Préférences</span>
                                     </li>
                                     <li><a href="#"><i class="halflings-icon user"></i>Profil</a></li>
-                                    <li><asp:LinkButton runat="server" ID="HLDisconnectTop" NavigateUrl="~/Pages/Login.aspx" OnClick="HLDisconnect_Click"><i class="halflings-icon off"></i>Déconnexion</asp:LinkButton></li>
+                                    <li>
+                                        <asp:LinkButton runat="server" ID="HLDisconnectTop" OnClick="HLDisconnect_Click"><i class="halflings-icon off"></i>Déconnexion</asp:LinkButton></li>
                                 </ul>
                             </li>
                             <!-- end: User Dropdown -->
@@ -218,23 +218,17 @@
                         </li>--%>
                             <li><a href="Projects.aspx"><i class="icon-list-alt"></i><span class="hidden-tablet">Projets</span></a></li>
                             <li><a href="Mails.aspx"><i class="icon-inbox"></i><span class="hidden-tablet">Mails</span></a></li>
-                            <li><asp:LinkButton runat="server" ID="HLDisconnectLeft" NavigateUrl="~/Pages/Login.aspx" OnClick="HLDisconnect_Click"><i class="icon-lock"></i><span class="hidden-tablet">Se Déconnecter</span></asp:LinkButton></li>
+                            <li runat="server" id="AdminPanel" visible="false"><a href="Admin.aspx"><i class="icon-inbox"></i><span class="hidden-tablet">Admin</span></a></li>
+                            <li>
+                                <asp:LinkButton runat="server" ID="HLDisconnectLeft" OnClick="HLDisconnect_Click"><i class="icon-lock"></i><span class="hidden-tablet">Se Déconnecter</span></asp:LinkButton>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <!-- end: Main Menu -->
 
-                <noscript>
-				<div class="alert alert-block span10">
-					<h4 class="alert-heading">Warning!</h4>
-					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-				</div>
-			</noscript>
-
                 <!-- start: Content -->
                 <div id="content" class="span10">
-
-
                     <ul class="breadcrumb">
                         <li>
                             <i class="icon-home"></i>
@@ -249,17 +243,10 @@
                     <div class="row-fluid">
                         <asp:ContentPlaceHolder ID="PageContent" runat="server" />
                     </div>
-
-
-
                 </div>
-                <!--/.fluid-container-->
-
                 <!-- end: Content -->
             </div>
-            <!--/#content.span10-->
         </div>
-        <!--/fluid-row-->
 
         <div class="modal hide fade" id="myModal">
             <div class="modal-header">
@@ -278,12 +265,9 @@
         <div class="clearfix"></div>
 
         <footer>
-
             <p>
-                <span style="text-align: left; float: left">&copy; 2013 <a href="http://jiji262.github.io/Bootstrap_Metro_Dashboard/" alt="Bootstrap_Metro_Dashboard">Bootstrap Metro Dashboard</a></span>
-
+                <span style="text-align: left; float: left">&copy; 2013 <a href="#">Project Management App</a></span>
             </p>
-
         </footer>
 
         <!-- start: JavaScript-->

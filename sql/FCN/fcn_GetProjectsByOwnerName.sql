@@ -5,7 +5,7 @@ IF EXISTS (SELECT 1 FROM dbo.sysobjects WHERE id = OBJECT_ID(N'[dbo].[fcn_GetPro
 	DROP FUNCTION [dbo].[fcn_GetProjectsByOwnerName]
 GO
 
-CREATE function [dbo].[fcn_GetProjectsByOwnerName](@FirstName varchar(30), @LastName varchar(40))
+CREATE FUNCTION [dbo].[fcn_GetProjectsByOwnerName](@FirstName varchar(30), @LastName varchar(40))
 RETURNS TABLE
 AS
 RETURN 

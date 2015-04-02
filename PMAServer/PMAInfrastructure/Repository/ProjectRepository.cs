@@ -17,7 +17,7 @@ namespace PMAInfrastructure.Repository
             _projectDb = new ProjectDataDataContext();
 
             var results = _projectDb.fcn_GetProjects();
-
+            
             return results.Select(i => new ProjectModel
             {
                 Id = i.Id,

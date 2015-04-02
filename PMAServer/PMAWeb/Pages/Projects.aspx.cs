@@ -8,25 +8,36 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using AutoMapper;
 using PMAServices.Services;
+using System.Web.Security;
+using PMABusiness;
 
 namespace PMAWeb.Pages
 {
     public partial class Projects : System.Web.UI.Page
     {
-        ProjectServices projectServices = new ProjectServices();
+        ProjectTasks projectTasks = new ProjectTasks();
         ProjectDataReturn dataReturn = new ProjectDataReturn();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            dataReturn = Mapper.Map<PMAServices.DTO.ProjectDataReturn, DTO.ProjectDataReturn>(projectServices.GetProjects());
+            if (!IsPostBack)
+            {
+                if (!Context.User.Identity.IsAuthenticated)
+                {
+                    System.Diagnostics.Trace.TraceWarning("[Projects.aspx] - Page_Load : L'utilisateur n'est pas authentifié; redirection vers la page de Login.");
 
-            List<ProjectModel> list;
-            if (dataReturn.model.Count > 0)
-                list = dataReturn.model;
+                    FormsAuthentication.RedirectToLoginPage();
+                    return;
+                }
+            }
+
+            dataReturn = Mapper.Map<PMABusiness.DTO.ProjectDataReturn, DTO.ProjectDataReturn>(projectTasks.GetProjects());
+
+            if (dataReturn.Model.Count > 0)
+                Repeater1.DataSource = dataReturn.Model;
             else
-                list = new List<ProjectModel>();
+                Repeater1.DataSource = new List<ProjectModel>();
 
-            Repeater1.DataSource = list;
             Repeater1.DataBind();
         }
     }

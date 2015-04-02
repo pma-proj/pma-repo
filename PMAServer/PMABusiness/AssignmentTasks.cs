@@ -19,7 +19,7 @@ namespace PMABusiness
 
         public AssignmentDataReturn GetAssignments()
         {
-            return new AssignmentDataReturn { model = _assignmentDb.GetAssignments() };
+            return new AssignmentDataReturn { Model = _assignmentDb.GetAssignments() };
         }
     }
 }

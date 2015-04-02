@@ -5,8 +5,8 @@ using System.Web;
 
 namespace PMAWeb.DTO
 {
-    public class ProjectDataReturn
+    public class MemberDataReturn
     {
-        public List<ProjectModel> Model { get; set; }
+        public MemberModel Model { get; set; }
     }
 }

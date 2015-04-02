@@ -40,7 +40,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssignmentTasks.cs" />
+    <Compile Include="AuthenticationTasks.cs" />
     <Compile Include="DTO\AssignmentDataReturn.cs" />
+    <Compile Include="DTO\AuthenticationDataReturn.cs" />
     <Compile Include="DTO\ProjectDataReturn.cs" />
     <Compile Include="ProjectTasks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

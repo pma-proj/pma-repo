@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PMA_TEST" Class="AuthenticationDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=JASON\SQLEXPRESS;Initial Catalog=PMA_TEST;Persist Security Info=True;User ID=pma-usr" SettingsObjectName="PMAInfrastructure.Properties.Settings" SettingsPropertyName="PMA_TESTConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.fcn_Authenticate" Method="fcn_Authenticate" IsComposable="true">
+    <Parameter Name="Login" Parameter="login" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="fcn_AuthenticateResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PostalCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Telephone" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Mail" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

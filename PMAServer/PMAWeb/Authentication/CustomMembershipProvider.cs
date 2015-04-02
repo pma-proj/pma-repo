@@ -1,10 +1,13 @@
-﻿using System;
+﻿using AutoMapper;
+using PMABusiness;
+using PMAWeb.DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
 
-namespace PMAWeb.Tool
+namespace PMAWeb.Authentication
 {
     public class CustomMembershipProvider : MembershipProvider
     {
@@ -147,8 +150,13 @@ namespace PMAWeb.Tool
 
         public override bool ValidateUser(string username, string password)
         {
-            if (username == "tresfieldj" && password == "tresfieldj")
+            System.Diagnostics.Trace.TraceInformation("[CustomMembershipProvider] - ValidateUser");
+
+            MemberDataReturn dataReturn = Mapper.Map<PMABusiness.DTO.MemberDataReturn, DTO.MemberDataReturn>(new AuthenticationTasks().Authenticate(username));
+            if (dataReturn.Model.Mail == username && Cryptography.Decrypt(dataReturn.Model.Password) == password)
+            {
                 return true;
+            }
 
             return false;
         }

@@ -62,10 +62,150 @@ namespace PMAInfrastructure.DataAccess
 			OnCreated();
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fcn_GetAssignmentsByMember", IsComposable=true)]
+		public IQueryable<fcn_GetAssignmentsByMemberResult> fcn_GetAssignmentsByMember()
+		{
+			return this.CreateMethodCallQuery<fcn_GetAssignmentsByMemberResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.fcn_GetAssignments", IsComposable=true)]
 		public IQueryable<fcn_GetAssignmentsResult> fcn_GetAssignments()
 		{
 			return this.CreateMethodCallQuery<fcn_GetAssignmentsResult>(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+		}
+	}
+	
+	public partial class fcn_GetAssignmentsByMemberResult
+	{
+		
+		private int _Id;
+		
+		private string _Name;
+		
+		private System.DateTime _StartDate;
+		
+		private System.Nullable<System.DateTime> _EndDate;
+		
+		private int _MemberId;
+		
+		private string _MemberFirstName;
+		
+		private string _MemberLastName;
+		
+		public fcn_GetAssignmentsByMemberResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StartDate", DbType="DateTime NOT NULL")]
+		public System.DateTime StartDate
+		{
+			get
+			{
+				return this._StartDate;
+			}
+			set
+			{
+				if ((this._StartDate != value))
+				{
+					this._StartDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EndDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> EndDate
+		{
+			get
+			{
+				return this._EndDate;
+			}
+			set
+			{
+				if ((this._EndDate != value))
+				{
+					this._EndDate = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberId", DbType="Int NOT NULL")]
+		public int MemberId
+		{
+			get
+			{
+				return this._MemberId;
+			}
+			set
+			{
+				if ((this._MemberId != value))
+				{
+					this._MemberId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberFirstName", DbType="VarChar(30) NOT NULL", CanBeNull=false)]
+		public string MemberFirstName
+		{
+			get
+			{
+				return this._MemberFirstName;
+			}
+			set
+			{
+				if ((this._MemberFirstName != value))
+				{
+					this._MemberFirstName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MemberLastName", DbType="VarChar(40) NOT NULL", CanBeNull=false)]
+		public string MemberLastName
+		{
+			get
+			{
+				return this._MemberLastName;
+			}
+			set
+			{
+				if ((this._MemberLastName != value))
+				{
+					this._MemberLastName = value;
+				}
+			}
 		}
 	}
 	

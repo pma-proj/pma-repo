@@ -4,17 +4,44 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+<!-- start: Meta -->
+    <meta charset="utf-8" />
+    <title>Project Management App - Connexion</title>
+    <meta name="description" content="Project Management App" />
+    <meta name="author" content="Jason Tresfield" />
+    <!-- end: Meta -->
+
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- end: Mobile Specific -->
+
     <!-- start: CSS -->
     <link href="<%=ResolveUrl("~/Resources/Styles/bootstrap.min.css") %>" rel="stylesheet" />
-    <%--<link href="<%=ResolveUrl("~/Resources/Styles/bootstrap.responsive.min.css") %>" rel="stylesheet" />--%>
+    <link href="<%=ResolveUrl("~/Resources/Styles/bootstrap.responsive.min.css") %>" rel="stylesheet" />
     <link href="<%=ResolveUrl("~/Resources/Styles/style.css") %>" rel="stylesheet" />
     <link href="<%=ResolveUrl("~/Resources/Styles/style-responsive.css") %>" rel="stylesheet" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext" rel="stylesheet" type="text/css" />
     
     <style type="text/css">
-		body { background: url(<%=ResolveUrl("~/Resources/Images/bg-login.jpg") %>); }
-	</style>
+        body {
+            background: url(<%=ResolveUrl("~/Resources/Images/bg-login.jpg") %>);
+        }
+    </style>
     <!-- end: CSS -->
+
+    <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<link href="css/ie.css" rel="stylesheet">
+	<![endif]-->
+
+    <!--[if IE 9]>
+		<link href="css/ie9.css" rel="stylesheet">
+	<![endif]-->
+
+    <!-- start: Favicon -->
+    <link rel="shortcut icon" href="<%=ResolveUrl("~/Resources/Images/favicon.ico") %>" />
+    <!-- end: Favicon -->
 </head>
 <body>
     <div class="container-fluid-full">
@@ -50,6 +77,7 @@
                                 <asp:Button runat="server" ID="BtnConnect" CssClass="btn btn-primary" Text="Connexion" OnClick="BtnConnect_Click" />
                             </div>
                             <div class="clearfix"></div>
+                        </fieldset>
                     </form>
                     <%--                    <hr>
                     <h3>Forgot Password?</h3>

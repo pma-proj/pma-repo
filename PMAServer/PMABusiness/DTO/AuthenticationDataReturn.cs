@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace PMABusiness.DTO
 {
-    public class ProjectDataReturn
+    public class MemberDataReturn
     {
-        public List<ProjectModel> Model { get; set; }
+        public MemberModel Model { get; set; }
     }
 }

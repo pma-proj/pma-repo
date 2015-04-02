@@ -9,6 +9,6 @@ namespace PMABusiness.DTO
 {
     public class AssignmentDataReturn
     {
-        public List<AssignmentModel> model { get; set; }
+        public List<AssignmentModel> Model { get; set; }
     }
 }
